@@ -7,18 +7,21 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductItemDetailComponent } from './components/product-item-detail/product-item-detail.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
-
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ProductItemDetailComponent,
     ProductItemComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
