@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Product } from 'src/app/models/Product';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
@@ -8,8 +9,9 @@ import { Product } from 'src/app/models/Product';
 export class ProductItemComponent implements OnInit {
 
   @Input() product: Product;
+  addProduct: EventEmitter<Product> = new EventEmitter;
 
-  constructor() {
+  constructor(private router: Router) {
     this.product = {
       id: 0,
       name: "",
@@ -20,6 +22,10 @@ export class ProductItemComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  add(product: Product): void {
+    this.addProduct.emit(product);
   }
 
 }
