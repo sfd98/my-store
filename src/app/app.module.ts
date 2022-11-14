@@ -8,6 +8,7 @@ import { ProductItemDetailComponent } from './components/product-item-detail/pro
 import { ProductItemComponent } from './components/product-item/product-item.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { CartComponent } from './components/cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
@@ -18,14 +19,15 @@ import { FormsModule } from '@angular/forms';
     ProductItemDetailComponent,
     ProductItemComponent,
     ConfirmationComponent,
-    NavBarComponent
+    NavBarComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

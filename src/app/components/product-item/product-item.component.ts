@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Product } from 'src/app/models/Product';
-import { Router } from '@angular/router';
 import { CartSessionService } from 'src/app/services/cart-session.service';
 @Component({
   selector: 'app-product-item',
@@ -15,7 +14,7 @@ export class ProductItemComponent implements OnInit {
   amount: number = 0
   
 
-  constructor(private router: Router, private cartSessionService: CartSessionService) {
+  constructor(private cartSessionService: CartSessionService) {
     this.product = {
       id: 0,
       name: "",

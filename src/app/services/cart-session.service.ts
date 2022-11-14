@@ -8,7 +8,6 @@ import { Product } from '../models/Product';
 export class CartSessionService {
 
   products: Product[] = [];
-  filteredCart: Product[] = [];
   constructor() {
 
   }

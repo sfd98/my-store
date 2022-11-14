@@ -7,16 +7,19 @@ import { CartSessionService } from 'src/app/services/cart-session.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })
+
 export class CartComponent implements OnInit {
 
-  productList: Product[] = [];
+  shoppingCart: Product[] = [];
 
-  constructor(private service: CartSessionService) {
+  constructor(private cart: CartSessionService) {
     
   }
 
   ngOnInit(): void {
-    
+    this.shoppingCart = this.cart.products
+    console.log("INIT CART")
+    console.log(this.shoppingCart)
   }
 
 }
