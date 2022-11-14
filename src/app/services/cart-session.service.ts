@@ -18,11 +18,13 @@ export class CartSessionService {
     //input
     if (this.products.includes(product)) {
       product.amount += amount;
+      console.log("Added amount: " + amount);
     } else {
       this.products.push(product);
       product.amount = amount;
+      console.log("Added amount: " + amount);
     };
-
+    console.log(this.products);
     /*for (let i = 0; i<parseInt(amount); i++){
       this.products.push(product);
     }

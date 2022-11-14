@@ -7,7 +7,7 @@
         <br>
         <form action="">
             <select [(ngModel)]="amount" name="amount" class="select-input">
-                <option *ngFor="let select of selector" [value]="select">{{select}}</option>
+                <option *ngFor="let select of selector" [ngValue]="select">{{select}}</option>
             </select>
             <br>
             <button class="btn btn-primary" (click)="add(product, amount)">Add to Cart</button>
