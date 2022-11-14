@@ -5,16 +5,13 @@
         <p>{{product.price}}</p>
         <p>{{product.description}}</p>
         <br>
-        <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
-    <br>
-    <button class="btn btn-primary" (click)="add(product)">Add to Cart</button>
-    <div class="back-link"><a [routerLink]="'/'">Back to product list</a></div>
+        <form action="">
+            <select [(ngModel)]="amount" name="amount" class="select-input">
+                <option *ngFor="let select of selector" [value]="select">{{select}}</option>
+            </select>
+            <br>
+            <button class="btn btn-primary" (click)="add(product, amount)">Add to Cart</button>
+        </form>
+        <div class="back-link"><a [routerLink]="'/'">Back to product list</a></div>
     </div>
-    
 </div>

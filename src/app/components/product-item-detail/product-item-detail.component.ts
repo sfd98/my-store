@@ -1,6 +1,8 @@
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/Product';
+import { CartSessionService } from 'src/app/services/cart-session.service';
+
 
 @Component({
   selector: 'app-product-item-detail',
@@ -8,11 +10,13 @@ import { Product } from 'src/app/models/Product';
   styleUrls: ['./product-item-detail.component.css']
 })
 export class ProductItemDetailComponent implements OnInit {
-  
-  product: any
-  addProduct: EventEmitter<Product> = new EventEmitter;
+  @Output() addProduct: EventEmitter<Product> = new EventEmitter;
 
-  constructor(private router: Router) { 
+  product: any;
+  selector: number[] = [1,2,3,4,5,6,7,8,9,10];
+  amount: number = 0;
+
+  constructor(private router: Router, private cartSessionService: CartSessionService) { 
     
     this.product = this.router.getCurrentNavigation()?.extras.state;
   }
@@ -20,7 +24,8 @@ export class ProductItemDetailComponent implements OnInit {
     console.log("Hello Detail")
   }
 
-  add(product: Product): void {
+  add(product: Product, amount: number): void {
+    this.cartSessionService.addToCart(product, amount);
     this.addProduct.emit(product);
   }
 

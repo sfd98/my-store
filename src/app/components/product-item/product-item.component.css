@@ -24,6 +24,7 @@
 .select-input {
   width: 108px; 
   margin-bottom: 8px;
+  display:block;
 }
 
 button {

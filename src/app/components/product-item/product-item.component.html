@@ -5,17 +5,22 @@
     </div>
     <p>{{product.name}}</p>
     <br>
-    <p>{{product.price}}</p>
+    <p>${{product.price}}</p>
     <br>
-    <select>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
-    <br>
-    <button class="btn btn-primary" (click)="add(product)">Add to Cart</button>
+    <form>
+        
+        <!--<input type="number" [(ngModel)]="amount" name="amount" id="amount" min="1" max="10">-->
+
+        <select [(ngModel)]="amount" name="amount" class="select-input">
+            <option *ngFor="let select of selector" [value]="select" selected="1">{{select}}</option>
+        </select>
+        <br>
+        <button class="btn btn-primary" (click)="add(product, amount)">Add to Cart</button>
+        <p>{{product.amount}}</p>
+    </form>
+
+    
+    
 </div>
 
 
