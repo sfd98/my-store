@@ -1,27 +1,22 @@
-# MyStore
+# My Store
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+## Starting
 
-## Development server
+Start by running 'ng serve' in your terminal.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Navigate to localhost:4200 on your browser to access the running instance of the store.
 
-## Code scaffolding
+Navigable routes: 
+- / -> Main Page
+- /cart -> Cart
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Click on a picture to access the detail page
 
-## Build
+Use the drop down on the detail or main page to select a amount to be added to the cart
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Click on 'Add to cart' to add the selected amount to the cart
 
-## Running unit tests
+When done navigate to the cart page to see the selected items
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Introduce valid information into the form (notice the placeholder in the input fields) and press Submit to progress to the confirmation page
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
