@@ -1,8 +1,20 @@
 # My Store
 
+## Information
+
+This website is a store that provides several items that can be viewed individually and added to a cart. After providing valid information it is possible to create a order and recieve a confirmation.
+
+## Data Source
+
+This page uses the data from the provided json file in the assets folder.
+
 ## Starting
 
-Start by running 'ng serve' in your terminal.
+Install the dependencies with 'npm install'.
+
+Start the app by running 'ng serve' in your terminal.
+
+## Using the website
 
 Navigate to localhost:4200 on your browser to access the running instance of the store.
 

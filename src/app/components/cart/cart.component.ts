@@ -22,17 +22,8 @@ export class CartComponent implements OnInit {
     
   }
 
-  /*TODO 
-  - validate the form input
-  
-  BUGS: 
-  - When returning to the product list page and adding again products, the products are not added to the amount.
-  */
   ngOnInit(): void {
     this.shoppingCart = this.cart.products
-    console.log("INIT CART")
-    console.log(this.shoppingCart)
-
   }
 
   calculate(): string {
@@ -44,9 +35,6 @@ export class CartComponent implements OnInit {
   }
 
   submit(): void {
-    //validate input
-
-    //if valid then proceed to confirmation
     if ((this.name.length < 3) || (this.adress.length < 6) || (this.ccnumber.length != 16)) {
       alert("Check your input"); 
     } else {
@@ -55,4 +43,11 @@ export class CartComponent implements OnInit {
       this.router.navigateByUrl('/confirmation');
     }
   }
+
+  remove(product:Product): void {
+    this.cart.removeFromCart(product);
+    this.ngOnInit();
+    alert("Product removed!");
+  }
+
 }
