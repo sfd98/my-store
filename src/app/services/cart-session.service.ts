@@ -12,41 +12,13 @@ export class CartSessionService {
 
   }
   
-  addToCart(product: Product, amount: number) {
-
-    //input
+  addToCart(product: Product, amount: number): void {
+    console.log(this.products);
     if (this.products.includes(product)) {
       product.amount += amount;
-      console.log("Added amount: " + amount);
     } else {
       this.products.push(product);
       product.amount = amount;
-      console.log("Added amount: " + amount);
     };
-    console.log(this.products);
-    /*for (let i = 0; i<parseInt(amount); i++){
-      this.products.push(product);
-    }
-    console.log(this.products);*/
   }
-
-  /*calculateAmounts(productList: Product[]): Product[] {
-    this.products.forEach((element) => {
-      if (this.filteredCart.includes(element)) {
-        element.amount += 1;
-      } else {
-        this.filteredCart.push(element);
-        element.amount += 1;
-      }
-    })
-    
-    return this.filteredCart;
-    
-  };
-
-
-  getProductsFromCart(): Product[]{
-    return this.products;
-  };
-  */
 }

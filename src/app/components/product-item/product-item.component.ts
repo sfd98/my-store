@@ -29,7 +29,6 @@ export class ProductItemComponent implements OnInit {
   }
 
   add(product: Product, amount: number): void {
-    //this.addProduct.emit(product);
     this.cartSessionService.addToCart(product, amount);
   }
 
