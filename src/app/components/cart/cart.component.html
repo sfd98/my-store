@@ -17,13 +17,13 @@
     
 
     <div class="cart-panel">
-        <form class="form"> <!--call the function to submit-->
+        <form class="form">
             <label>Name</label>
             <input type="text" placeholder="(minimum 3 characters)" name="name" [(ngModel)]="name">
             <label>Address</label>
             <input type="text" placeholder="(minimum 6 characters)" name="adress" [(ngModel)]="adress">
             <label>Credit card number</label>
-            <input type="text" maxlength="16" placeholder="(16-digit number)" name="ccnumber" [(ngModel)]="ccnumber">
+            <input type="text" maxlength="16" placeholder="(16-digit number)" name="ccnumber" [(ngModel)]="ccnumber" (ngModelChange)="onFormChange($event)">
             <p>We'll never share your payment details with anyone else.</p>
             <button class="btn btn-primary" (click)="submit()">Submit</button>
         </form>

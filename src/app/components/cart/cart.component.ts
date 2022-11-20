@@ -36,7 +36,7 @@ export class CartComponent implements OnInit {
 
   submit(): void {
     if ((this.name.length < 3) || (this.adress.length < 6) || (this.ccnumber.length != 16)) {
-      alert("Check your input"); 
+      alert('Check your input'); 
     } else {
       this.confirmationDetails.setName(this.name);
       this.confirmationDetails.setTotal(this.calculate());
@@ -47,7 +47,13 @@ export class CartComponent implements OnInit {
   remove(product:Product): void {
     this.cart.removeFromCart(product);
     this.ngOnInit();
-    alert("Product removed!");
+    alert('Product removed!');
   }
+
+  onFormChange(value: string) {
+    if (!value.match('^[0-9]+$')) {
+      alert('Only numbers allowed!');
+    }
+  } 
 
 }

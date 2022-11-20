@@ -13,14 +13,22 @@ export class CartSessionService {
   }
   
   addToCart(product: Product, amount: number): void {
-    if (this.products.includes(product)) {
-      product.amount += amount;
-      alert("Added to cart!")
-    } else {
+
+    //initial push needed or the forEach will not work...
+    if (this.products.length === 0) {
       this.products.push(product);
       product.amount = amount;
-      alert("Added to cart!")
-    };
+    }
+
+    this.products.forEach(element => {
+      if (element.id === product.id) {
+        product.amount += amount;
+      } else {
+        this.products.push(product);
+        product.amount = amount;
+      }
+    });
+
   }
 
   removeFromCart(remProduct: Product):void {
